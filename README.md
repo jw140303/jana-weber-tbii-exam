@@ -9,5 +9,5 @@ The MVP can be started with the 'app.py' file.
 ## Instructions to run my app
 1. Clone my repository to your machine
 2. Go into the folder you created
-3. Run the app.py folder
+3. Run the 'app.py' folder
 4. Enjoy using my app! :)
