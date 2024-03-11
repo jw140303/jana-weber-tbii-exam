@@ -274,6 +274,10 @@ def display_friends():
         friend_button.pack()
 
 def create_homepage():
+    """
+    This function creates the homepage for the app.
+    The homepage welcomes the user and displays different profiles that can be added to the friend list.
+    """
     clear_widgets(root)
     create_page_buttons()
 
@@ -290,7 +294,7 @@ def create_homepage():
                            fg = font_colour_1,
                            bg = background_colour_1,
                            font = text)
-    quote_label.pack()  # placing the random quote on the page
+    quote_label.pack()
 
     profiles_label = tk.Label(root,
                            text = 'Here is a profile that might be of interest for you:',
@@ -299,8 +303,11 @@ def create_homepage():
 
     randomize_profile()
 
-
 def create_friends_page():
+    """
+    This function creates the friends page of the app.
+    It displays the friends the user has added and shows their information.
+    """
     clear_widgets(root)
     create_page_buttons()
 
@@ -318,6 +325,10 @@ def create_friends_page():
 
 
 def sendmessage():
+    """
+    This function fetches the message in the chatbox.
+    If there is a message, it will be mirrored.
+    """
     user_message = entry_box.get()
 
     # if the user enters a message repeat it
@@ -326,6 +337,10 @@ def sendmessage():
         text_box.insert(tk.END, f'\n{chat_username}: {user_message}')
 
 def open_chat_room(root):
+    """
+    This function creates the chatbox.
+    If the requested user is in the users friend list, a chat with that person will be opened.
+    """
     global chat_username, entry_box, text_box
     userfriends = list(pd.read_csv(f'data/{username}_friends.csv').friends)
     if chat_username.get() in userfriends:
@@ -369,10 +384,15 @@ def open_chat_room(root):
 
         create_page_buttons()
     else:
+        #giving a warning that the username isn't in the friend list
         tk.messagebox.showwarning("WARNING",
-                                  "User is not in friend list. Please correct your spelling.")  # giving a warning that the username isn't in the friend list
+                                  "User is not in friend list. Please correct your spelling.")
 
 def create_chat_page():
+    """
+    This function creates the chat page.
+    It gives the user the option to choose a friend to chat with.
+    """
     global chat_username
     clear_widgets(root)
     create_page_buttons()
@@ -393,13 +413,13 @@ def create_chat_page():
                                  fg=font_colour_1, bg=background_colour_1, font=text)
     chat_username_box.place(x=300, y=150)
 
-    # add a button to confirm the username
+    #adding a button to confirm the username
     chat_username_button = tk.Button(root,
                                      text='Chat with them',
                                      bg=background_colour_2, fg=font_colour_1, font=text,
                                      command=lambda: open_chat_room(root))
     chat_username_button.place(x=300, y=200)
 
-create_startpage()
+create_startpage() #starting the GUI
 
 root.mainloop()
