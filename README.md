@@ -15,9 +15,14 @@ git clone https://github.com/jw140303/jana-weber-tbii-exam.git
 ```
 cd jana-weber-tbii-exam
 ```
-3. Run the 'app.py' folder
+3. Please install the required libraries - tkinter, pandas, and pillow
+```
+pip install tkinter pandas pillow
+```
+4. Run the 'app.py' folder
 ```
 python app.py
 ```
-4. Please log in with the username 'test'
-5. Enjoy using my app! :)
+5. Please log in with the username 'test' 
+
+6. Enjoy using my app! :)

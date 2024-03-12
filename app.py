@@ -256,7 +256,7 @@ def display_friend(friend):
 
 def define_friend(friend):
     """
-    This function returns the username that the user clicked on.
+    This function returns the username that the user clicked on to ensure that the correct user is displayed.
     """
     return lambda: display_friend(friend)
 
